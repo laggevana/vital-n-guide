@@ -1,9 +1,9 @@
 const guideSteps = [
   { icon: "🥛", label: "Ihalo sa tubig", time: 16.5 },
-  { icon: "⏰", label: "Iwanan ng 8 oras", time: 23.5 },
-  { icon: "🪣", label: "Dagdagan ng tubig", time: 32.5 },
-  { icon: "🌾", label: "I-apply sa buto o ugat", time: 40.5 },
-  { icon: "🌱", label: "Itanim", time: 47.5 }
+  { icon: "⏰", label: "Iwanan ng 8 oras", time: 25.5 },
+  { icon: "🪣", label: "Dagdagan ng tubig", time: 34.5 },
+  { icon: "🌾", label: "I-apply sa buto o ugat", time: 42.5 },
+  { icon: "🌱", label: "Itanim", time: 49.5 }
 ];
 
 const media = {
