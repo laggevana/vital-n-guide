@@ -219,6 +219,8 @@ function updateActiveStep(steps, currentTime) {
 
 let videoWatchedFully = false;
 
+const videoLoading = document.querySelector("#video-loading");
+
 function loadVideo(key) {
   stopNarration();
   currentVideo = key;
@@ -229,6 +231,7 @@ function loadVideo(key) {
   document.querySelector("#missing-path").textContent = item.src;
   missing.hidden = true;
   fallbackNext.hidden = true;
+  videoLoading.hidden = false;
   renderSteps(item.steps);
   video.src = item.src;
   video.load();
@@ -314,6 +317,9 @@ video.addEventListener("timeupdate", () => {
 });
 video.addEventListener("play", () => document.querySelector("#play").textContent = "❚❚");
 video.addEventListener("pause", () => document.querySelector("#play").textContent = "▶");
+video.addEventListener("waiting", () => { videoLoading.hidden = false; });
+video.addEventListener("playing", () => { videoLoading.hidden = true; });
+video.addEventListener("canplay", () => { videoLoading.hidden = true; });
 
 document.querySelector("#play").addEventListener("click", () => video.paused ? video.play() : video.pause());
 document.querySelector("#progress").addEventListener("input", e => { if (video.duration) video.currentTime = video.duration * e.target.value / 100; });
